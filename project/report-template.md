@@ -18,18 +18,18 @@ Reduced the rmse by half. Some of the newly created columns is a strong predicto
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-Didn't do much better, actually did a bit worse.
+It did better, but not significantly.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-I would go into detail with fine-tuning the *kwargs and models used, since currently the ones I have handpicked didn't do as well as the auto ones of autogluon.
-Additional feature engineering might prove beneficial too.
+I would research different models, or use the same ones with different params, also provide a bigger timeframe to train.
+Additional feature engineering might prove beneficial too and would be my main focus.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
-|model       |hpo1 |hpo2|hpo3|score  |
-|--          |--   |--  |--  |--     |
-|initial     |False|None|None|1.80419|
-|add_features|False|None|None|0.69552|
-|hpo         |True | 5  | 2  |0.70198|
+|model       |autostack |num_bag_folds|num_stack_levels|GBM_extra_trees|GBM_num_boost_round|RF_n_estimators|XGB_learning_rate|XGB_n_estimators|score  |
+|--          |--        |--           |--              |               |                   |               |                 |                |--     |
+|initial     |False     |None         |None            |  None         |   None            |     None      |   None          |  None          |1.80029|
+|add_features|False     |None         |None            |  None         |   None            |     None      |   None          |  None          |0.68408|
+|hpo         |True      | 5           | 2              |  True         |   100             |     300       |   0.05          |  100           |0.55107|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
